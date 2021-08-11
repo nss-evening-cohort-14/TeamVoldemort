@@ -23,26 +23,4 @@ namespace TeamVoldemort.Repositories
                 throw new NotImplementedException();
             }
         }
-
-        class StoreRepository
-        {
-            static List<Store> _stores = new List<Store>();
-            public List<Store> GetAllStores();
-        }
-
-        class SalesRepository
-        {
-            static List<Sales> _sales = new List<Sales>();
-            public List<Sales> GetAllSales();
-        }
-
-        class PeopleRepository
-        {
-            static List<Person> _people = new List<Person>
-            {
-                // Field for Employee Info //
-            };
-        }
-
-
     }
