@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeamVoldemort.Repositories
+namespace TeamVoldemort.District
 {
     class DistrictRepository
-    {
-        class DistrictRepository
         {
             // we're using a static list here instead of a proper database
             // but the general idea still holds up once we cover databases
@@ -25,27 +23,4 @@ namespace TeamVoldemort.Repositories
                 throw new NotImplementedException();
             }
         }
-
-        class StoreRepository
-        {
-            static List<Store> _stores = new List<Store>();
-            public List<Store> GetAllStores();
-        }
-
-        class SalesRepository
-        {
-            static List<Sales> _sales = new List<Sales>();
-            public List<Sales> GetAllSales();
-        }
-
-        class PeopleRepository
-        {
-            static List<Person> _people = new List<Person>
-            {
-                // Field for Employee Info //
-            };
-        }
-
-
-    }
 }
