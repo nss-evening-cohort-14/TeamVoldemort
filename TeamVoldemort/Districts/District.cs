@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeamVoldemort.District
+namespace TeamVoldemort.Districts
 {
     class District
     {
         public string DistrictManager { get; set; }
         public string Name { get; set; }
         public List<string> StoreList { get; set; }
+        
 
         public District(string districtManager, string name, List<string> storeList)
         {
