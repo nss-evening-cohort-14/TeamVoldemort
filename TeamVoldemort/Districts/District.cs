@@ -10,14 +10,14 @@ namespace TeamVoldemort.Districts
     {
         public string DistrictManager { get; set; }
         public string Name { get; set; }
-        public List<string> StoreList { get; set; }
+        //public List<string> StoreList { get; set; }
         
 
-        public District(string districtManager, string name, List<string> storeList)
+        public District(string districtManager, string name)
         {
             DistrictManager = districtManager;
             Name = name;
-            StoreList = storeList;
+            //StoreList = storeList;
         }
     }
 
