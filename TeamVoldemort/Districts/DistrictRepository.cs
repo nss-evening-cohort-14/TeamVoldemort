@@ -16,16 +16,22 @@ namespace TeamVoldemort.Districts
              new District("Julia", DistrictName.South),
              new District("Rachel", DistrictName.North)
             };
-            
 
-            //public List<District> GetDistricts()
-            //{
-            //    throw new NotImplementedException();
-            //}
-
-            //public void SaveNewDistrict(District district)
-            //{
-            //    throw new NotImplementedException();
-            //}
+        public List<District> GetAll()
+        {
+            return _districts;
         }
+
+        static void AddNewDistrict(District district)
+        {
+            _districts.Add(district);
+        }
+
+        static void Delete(DistrictName name)
+        {
+            var districtToRemove = _districts.First(district => district.Name == name);
+
+            _districts.Remove(districtToRemove);
+        }
+    }
 }
