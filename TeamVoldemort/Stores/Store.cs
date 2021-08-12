@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeamVoldemort.Store
+namespace TeamVoldemort.Stores
 {
     class Store
     {
@@ -14,6 +14,7 @@ namespace TeamVoldemort.Store
         public string RetailYearly { get; set; }
         public string RetailCurrentQuarter { get; set; }
         public  List<string> EmployeeList { get; set; }
+      public District DistrictName { get; set; }
 
         public Store(int storeNumber, string gasYearly,string gasCurrentQuarter, string retailYearly, string retailCurrentQuarter, List<string> employeeList)
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using TeamVoldemort.Menu;
+using TeamVoldemort.Stores;
 
 namespace TeamVoldemort
 {
@@ -16,7 +17,8 @@ namespace TeamVoldemort
           Console.WriteLine("You selected Enter District Sales");
           break;
         case 2:
-          Console.WriteLine("You selected Generate District Report");
+          StoreRepository.GenerateDistrictReport();
+          menu.Display();
           break;
         case 3:
           Console.WriteLine("You selected Add New Employee");
@@ -31,7 +33,6 @@ namespace TeamVoldemort
           Console.WriteLine("Invalid Entry");
           break;
       }
-
 
     }
   }
