@@ -10,8 +10,14 @@ namespace TeamVoldemort.Districts
     {
         public string DistrictManager { get; set; }
         public DistrictName Name { get; set; }
+<<<<<<< HEAD
 
 
+=======
+ 
+        
+
+>>>>>>> Development
         public District(string districtManager, DistrictName name)
         {
             DistrictManager = districtManager;
