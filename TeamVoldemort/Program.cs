@@ -1,5 +1,6 @@
 ﻿using System;
 using TeamVoldemort.Menu;
+using TeamVoldemort.Store;
 
 namespace TeamVoldemort
 {
@@ -23,7 +24,24 @@ namespace TeamVoldemort
           break;
         case 4:
           Console.WriteLine("You selected Add a Store/District");
-          break;
+
+                    var storeRepo = new StoreRepository();
+
+                    Console.WriteLine("Enter store number:");
+                    var storeNum = Console.ReadLine();
+                    Console.WriteLine("Enter gas yearly sales:");
+                    var storeGasYearly = Console.ReadLine();
+                    Console.WriteLine("Enter gas sales for the current quarter:");
+                    var storeGasCurrentQuarter = Console.ReadLine();
+                    Console.WriteLine("Enter retail yearly sales:");
+                    var storeRetailYearly = Console.ReadLine();
+                    Console.WriteLine("Enter retail sales for the current quarter:");
+                    var storeRetailCurrentQuarter = Console.ReadLine();
+
+                    // still need employee list 
+
+                    // storeRepo.addNewStore(storeNum, storeGasYearly, storeGasCurrentQuarter, storeRetailYearly, storeRetailCurrentQuarter);
+                    break;
         case 5:
           Console.WriteLine("You selected Exit");
           break;
