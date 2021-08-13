@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TeamVoldemort.Districts;
+using TeamVoldemort.Employees;
 using TeamVoldemort.Stores;
 
 namespace TeamVoldemort.Menu
@@ -53,13 +55,14 @@ namespace TeamVoldemort.Menu
           break;
         case 3:
           Console.WriteLine("You selected Add New Employee");
-          //DistrictReport.InitialDistrictReport();
+          EmployeeRepository.AddNewEmployee();
           break;
         case 4:
           StoreRepository.AddStore();
           break;
         case 5:
           Console.WriteLine("You selected Add New District");
+          DistrictRepository.AddNewDistrict();
           break;
         case 6:
           break;
@@ -68,5 +71,6 @@ namespace TeamVoldemort.Menu
           break;
       }
     }
+
   }
 }

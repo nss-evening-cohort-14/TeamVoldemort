@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TeamVoldemort.Employees;
+//using TeamVoldemort.Districts
 
 namespace TeamVoldemort.Stores
 {
@@ -12,7 +13,10 @@ namespace TeamVoldemort.Stores
     static List<Store> _stores = new List<Store>()
   {
     new Store(1, "1037648", "96117", "1823294", "84445", "South"),
-    new Store(2, "1682513.56", "76384.34", "1923829", "89563.77", "South")
+    new Store(2, "1682513.56", "76384.34", "1923829", "89563.77", "South"),
+    new Store(3, "2345234", "4567467", "56785678", "3456354", "North"),
+    new Store(4, "1682513.56", "76384.34", "1923829", "89563.77", "North")
+
   };
 
     public static void GenerateDistrictReport(string districtName)
