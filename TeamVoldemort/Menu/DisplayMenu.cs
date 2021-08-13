@@ -17,12 +17,14 @@ namespace TeamVoldemort.Menu
       while(res == false)
       {
         Console.WriteLine("QuikTrip Management Systems");
+        Console.WriteLine($"      ");
 
         Console.WriteLine("1. Enter District Sales");
         Console.WriteLine("2. Generate District Report");
         Console.WriteLine("3. Add New Employee");
-        Console.WriteLine("4. Add a Store/District");
-        Console.WriteLine("5. Exit");
+        Console.WriteLine("4. Add a Store");
+        Console.WriteLine("5. Add a District");
+        Console.WriteLine("6. Exit");
         var result = Console.ReadLine();
         res = Int32.TryParse(result, out outNumb);
       }
@@ -40,24 +42,26 @@ namespace TeamVoldemort.Menu
       {
         case 1:
           Console.WriteLine("You selected Enter District Sales");
+          Console.WriteLine("Enter Store Number");
+          var storeEntered = Int32.Parse(Console.ReadLine());
+          StoreRepository.EnterStoreSales(storeEntered);
           break;
         case 2:
           Console.WriteLine("Please enter your district name");
           var userDistrict = Console.ReadLine();
           StoreRepository.GenerateDistrictReport(userDistrict);
-          this.Display();
           break;
         case 3:
           Console.WriteLine("You selected Add New Employee");
+          //DistrictReport.InitialDistrictReport();
           break;
         case 4:
-          Console.WriteLine("You selected Add a Store/District");
+          StoreRepository.AddStore();
           break;
         case 5:
-          Console.WriteLine("You selected Exit");
+          Console.WriteLine("You selected Add New District");
           break;
         case 6:
-          this.Display();
           break;
         default:
           Console.WriteLine("Invalid Entry");

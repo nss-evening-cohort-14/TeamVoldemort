@@ -9,9 +9,10 @@ namespace TeamVoldemort.Districts
     class District
     {
         public string DistrictManager { get; set; }
-        public DistrictName Name { get; set; }
+ cw-storemethods
+        public string Name { get; set; 
 
-        public District(string districtManager, DistrictName name)
+        public District(string districtManager, string name)
         {
             DistrictManager = districtManager;
             Name = name;

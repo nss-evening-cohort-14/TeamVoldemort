@@ -11,12 +11,14 @@ namespace TeamVoldemort.Employees
         public string EmployeeName { get; set; }
         public PositionType EmployeeTitle { get; set; }
         public int EmployeeSales { get; set; }
+        public int StoreNumber { get; set; }
 
-        public Employee(string employeeName, PositionType employeeTitle, int employeeSales)
+        public Employee(string employeeName, PositionType employeeTitle, int employeeSales, int storeNumber)
         {
             EmployeeName = employeeName;
             EmployeeTitle = employeeTitle;
             EmployeeSales = employeeSales;
+            StoreNumber = storeNumber;
         }
 
     }

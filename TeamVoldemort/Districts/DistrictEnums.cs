@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TeamVoldemort.Districts
 {
-  enum DistrictName
+  public enum DistrictName
   {
    South,
    North,
