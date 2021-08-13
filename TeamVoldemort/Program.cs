@@ -11,8 +11,12 @@ namespace TeamVoldemort
             Console.WriteLine("Hello World!");
             var menu = new DisplayMenu();
             var userInput =  menu.Display();
-            menu.UserMenu(userInput);
+          while (userInput < 6)
+         {
+          menu.UserMenu(userInput);
+          userInput = menu.Display();
+         }
 
+      }
     }
-  }
 }
