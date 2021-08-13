@@ -22,16 +22,34 @@ namespace TeamVoldemort.Districts
             return _districts;
         }
 
-        static void AddNewDistrict(District district)
+        // Adds New District
+        public static void AddNewDistrict()
         {
-            _districts.Add(district);
-        }
+            // Clears Console and creates a palceholder District //
+            // This new district is set to the variable 'userDistrict' //
+            Console.Clear();
+            var userDistrict = new District("Jessica", "North");
 
-        static void Delete(DistrictName name)
-        {
-            var districtToRemove = _districts.First(district => district.Name == name);
+            // Prompts user to enter district mamanger's name //
+            // Sets the newly made district's 'DistrictManager' property to the user's input //
+            Console.WriteLine("Enter the District Manager");
+            userDistrict.DistrictManager = Console.ReadLine();
 
-            _districts.Remove(districtToRemove);
+            // Propmts user to enter district location //
+            // Sets the newly made district's 'Name' property to the user's input //
+            Console.WriteLine("Enter District Location");
+            userDistrict.Name = Console.ReadLine();
+
+            // Used .Add to add this new 'userDistrict' to the '_districts' list in the 'DistrictRepository//
+            _districts.Add(userDistrict);
+
+            // Prints all info entered back to user and propmts them to finish filling out other info assosiated with the district //
+            Console.WriteLine("        ");
+            Console.WriteLine("New District Created");
+            Console.WriteLine("                 ");
+            Console.WriteLine($"{userDistrict.DistrictManager} is the District Manager of the {userDistrict.Name} District");
+            Console.WriteLine("                 ");
+            Console.WriteLine("To complete District details: Please add Stores, Employees, and Sales to your District. ");
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TeamVoldemort.Districts;
 using TeamVoldemort.Stores;
 
 namespace TeamVoldemort.Menu
@@ -60,6 +61,7 @@ namespace TeamVoldemort.Menu
           break;
         case 5:
           Console.WriteLine("You selected Add New District");
+          DistrictRepository.AddNewDistrict();
           break;
         case 6:
           break;
@@ -68,5 +70,6 @@ namespace TeamVoldemort.Menu
           break;
       }
     }
+
   }
 }
