@@ -13,6 +13,8 @@ namespace TeamVoldemort.Employees
         public string EmployeeTitle { get; set; }
         public int EmployeeSales { get; set; }
         public int StoreNumber { get; set; }
+        public int PayRate { get; set; }
+        public int HoursWorked { get; set; }
 
         public Employee(string employeeName, int employeeID, string employeeTitle, int employeeSales, int storeNumber)
         {
