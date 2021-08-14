@@ -81,21 +81,6 @@ namespace TeamVoldemort.Employees
 
             _employees.Add(userEmployee);
             generateEmployee(userEmployee);
-
-
-        //    Console.WriteLine("        ");
-        //    Console.WriteLine("\tNew Employee Created");
-        //    Console.WriteLine("                 ");
-        //    Console.WriteLine($"\tName: {userEmployee.EmployeeName}");
-        //    Console.WriteLine("                 ");
-        //    Console.WriteLine($"\tID Number: {userEmployee.EmployeeID}");
-        //    Console.WriteLine("                 ");
-        //    Console.WriteLine($"\tStore: #{userEmployee.StoreNumber}");
-        //    Console.WriteLine("                 ");
-        //    Console.WriteLine($"\tTitle: {userEmployee.EmployeeTitle}");
-        //    Console.WriteLine("                 ");
-        //    Console.WriteLine($"\tEmployee Sales: ${userEmployee.EmployeeSales}");
-        //    Console.WriteLine("                 ");
         }
 
        
