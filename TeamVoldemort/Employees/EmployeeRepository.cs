@@ -82,18 +82,82 @@ namespace TeamVoldemort.Employees
             Console.WriteLine("                 ");
         }
 
-        //public static void updateEmployeeInfo()
-        //{
-        //    Console.WriteLine("Update employee information? Y/N");
-        //    var response = Console.ReadLine().ToLower();
-        //    var yes = 'y';
-        //    var no = 'n';
+        public static void EnterTime()
+    {
+      Console.WriteLine("Please enter the Employee ID#:");
+      var employeeToUpdate = Int32.Parse(Console.ReadLine());
 
-        //    if (String.Equals(response, yes))
-        //    {
+      foreach (var empl in _employees)
+      {
+        Console.Clear();
+        if (empl.EmployeeID == employeeToUpdate)
+        {
+          Console.WriteLine($"Entering Time for {empl.EmployeeName}");
+          Console.WriteLine("     ");
 
-        //    }
-        //}
+          Console.WriteLine("Enter hours worked");
+          var hoursWorked = Int32.Parse(Console.ReadLine());
+          Console.WriteLine("     ");
+
+          Console.WriteLine("Enter hourly pay rate");
+          var rate = Int32.Parse(Console.ReadLine());
+          Console.WriteLine("     ");
+
+          var totalPay = hoursWorked * rate;
+          empl.HoursWorked = hoursWorked;
+          empl.PayRate = rate;
+
+
+          Console.WriteLine($"Current Pay Report for {empl.EmployeeName}");
+          Console.WriteLine($"-----------------------------");
+          Console.WriteLine($"\t Total Hours Worked: {empl.HoursWorked}");
+          Console.WriteLine($"\t Pay Rate: ${empl.PayRate}");
+          Console.WriteLine($"\t Total Gross Pay: ${totalPay}");
+
+          Console.WriteLine("     ");
+          Console.WriteLine("Press Enter to exit");
+          Console.ReadLine();
+        }
+      }
     }
+
+    public static void PrintChecks()
+    {
+      Console.WriteLine("Please enter your Store #:");
+      var storeToPrint = Int32.Parse(Console.ReadLine());
+
+      foreach (var empl in _employees)
+      {
+        if (empl.StoreNumber == storeToPrint)
+        {
+
+          Console.WriteLine("     ");
+
+          var totalPay = empl.HoursWorked * empl.HoursWorked;
+
+          Console.WriteLine($"Current Pay Report for {empl.EmployeeName}");
+          Console.WriteLine($"-----------------------------");
+          Console.WriteLine($"\t Total Hours Worked: {empl.HoursWorked}");
+          Console.WriteLine($"\t Pay Rate: ${empl.PayRate}");
+          Console.WriteLine($"\t Total Gross Pay: ${totalPay}");
+
+          Console.WriteLine("     ");
+        }
+      }
+    }
+
+    //public static void updateEmployeeInfo()
+    //{
+    //    Console.WriteLine("Update employee information? Y/N");
+    //    var response = Console.ReadLine().ToLower();
+    //    var yes = 'y';
+    //    var no = 'n';
+
+    //    if (String.Equals(response, yes))
+    //    {
+
+    //    }
+    //}
+  }
 }
 
