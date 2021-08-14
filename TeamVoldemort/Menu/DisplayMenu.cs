@@ -58,6 +58,7 @@ namespace TeamVoldemort.Menu
         case 3:
           Console.WriteLine("You selected Add New Employee");
           EmployeeRepository.AddNewEmployee();
+                    EmployeeRepository.updateEmployeeInfo();
           break;
         case 4:
           StoreRepository.AddStore();
