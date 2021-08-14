@@ -157,19 +157,19 @@ namespace TeamVoldemort.Employees
             var employeeSelected = int.Parse(Console.ReadLine());
 
             _employees.RemoveAll(employee => employee.EmployeeID == employeeSelected);
+      Console.WriteLine($" Employee {employeeSelected} has been removed!");
 
+      //foreach (var employee in _employees)
+      //{
+      //    if (employee.EmployeeID == employeeSelected)
+      //    {
 
-            //foreach (var employee in _employees)
-            //{
-            //    if (employee.EmployeeID == employeeSelected)
-            //    {
-
-            //        _employees.Remove(employee);
-            //        Console.WriteLine($" Employee {employeeSelected} has been removed!");
-            //        return;
-            //    }
-            //}
-        }
+      //        _employees.Remove(employee);
+      //        Console.WriteLine($" Employee {employeeSelected} has been removed!");
+      //        return;
+      //    }
+      //}
+    }
         public static void updateEmployeeInfo()
         {
             Console.WriteLine("Update employee information? Y/N");
