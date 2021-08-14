@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TeamVoldemort.Districts;
 using TeamVoldemort.Employees;
+using TeamVoldemort.Payroll;
 using TeamVoldemort.Stores;
 
 namespace TeamVoldemort.Menu
@@ -59,6 +60,7 @@ namespace TeamVoldemort.Menu
         case 3:
           Console.WriteLine("You selected Add New Employee");
           EmployeeRepository.AddNewEmployee();
+          EmployeeRepository.updateEmployeeInfo();
           break;
         case 4:
           StoreRepository.AddStore();
@@ -67,6 +69,10 @@ namespace TeamVoldemort.Menu
           Console.WriteLine("You selected Add New District");
           DistrictRepository.AddNewDistrict();
           break;
+        case 6:
+           var payRollSelection = PayRollMenu.ShowPayRollMenu();
+           PayRollMenu.PayRollActions(payRollSelection);
+           break;
         case 7:
           Console.WriteLine("You selected to Remove an Employee");
           EmployeeRepository.RemoveEmployee();

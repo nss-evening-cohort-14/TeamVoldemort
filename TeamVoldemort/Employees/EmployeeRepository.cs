@@ -44,7 +44,22 @@ namespace TeamVoldemort.Employees
             }
         }
 
-
+        public static void generateEmployee(Employee userEmployee)
+        {
+            Console.WriteLine("        ");
+            Console.WriteLine("\tNew Employee Created");
+            Console.WriteLine("                 ");
+            Console.WriteLine($"\tName: {userEmployee.EmployeeName}");
+            Console.WriteLine("                 ");
+            Console.WriteLine($"\tID Number: {userEmployee.EmployeeID}");
+            Console.WriteLine("                 ");
+            Console.WriteLine($"\tStore: #{userEmployee.StoreNumber}");
+            Console.WriteLine("                 ");
+            Console.WriteLine($"\tTitle: {userEmployee.EmployeeTitle}");
+            Console.WriteLine("                 ");
+            Console.WriteLine($"\tEmployee Sales: ${userEmployee.EmployeeSales}");
+            Console.WriteLine("                 ");
+        }
         public static void AddNewEmployee()
         {
             Console.Clear();
@@ -66,22 +81,74 @@ namespace TeamVoldemort.Employees
             userEmployee.EmployeeSales = Int32.Parse(Console.ReadLine());
 
             _employees.Add(userEmployee);
-
-
-            Console.WriteLine("        ");
-            Console.WriteLine("\tNew Employee Created");
-            Console.WriteLine("                 ");
-            Console.WriteLine($"\tName: {userEmployee.EmployeeName}");
-            Console.WriteLine("                 ");
-            Console.WriteLine($"\tID Number: {userEmployee.EmployeeID}");
-            Console.WriteLine("                 ");
-            Console.WriteLine($"\tStore: #{userEmployee.StoreNumber}");
-            Console.WriteLine("                 ");
-            Console.WriteLine($"\tTitle: {userEmployee.EmployeeTitle}");
-            Console.WriteLine("                 ");
-            Console.WriteLine($"\tEmployee Sales: ${userEmployee.EmployeeSales}");
-            Console.WriteLine("                 ");
+            generateEmployee(userEmployee);
         }
+
+       
+
+        public static void EnterTime()
+    {
+      Console.WriteLine("Please enter the Employee ID#:");
+      var employeeToUpdate = Int32.Parse(Console.ReadLine());
+
+      foreach (var empl in _employees)
+      {
+        Console.Clear();
+        if (empl.EmployeeID == employeeToUpdate)
+        {
+          Console.WriteLine($"Entering Time for {empl.EmployeeName}");
+          Console.WriteLine("     ");
+
+          Console.WriteLine("Enter hours worked");
+          var hoursWorked = Int32.Parse(Console.ReadLine());
+          Console.WriteLine("     ");
+
+          Console.WriteLine("Enter hourly pay rate");
+          var rate = Int32.Parse(Console.ReadLine());
+          Console.WriteLine("     ");
+
+          var totalPay = hoursWorked * rate;
+          empl.HoursWorked = hoursWorked;
+          empl.PayRate = rate;
+
+
+          Console.WriteLine($"Current Pay Report for {empl.EmployeeName}");
+          Console.WriteLine($"-----------------------------");
+          Console.WriteLine($"\t Total Hours Worked: {empl.HoursWorked}");
+          Console.WriteLine($"\t Pay Rate: ${empl.PayRate}");
+          Console.WriteLine($"\t Total Gross Pay: ${totalPay}");
+
+          Console.WriteLine("     ");
+          Console.WriteLine("Press Enter to exit");
+          Console.ReadLine();
+        }
+      }
+    }
+
+    public static void PrintChecks()
+    {
+      Console.WriteLine("Please enter your Store #:");
+      var storeToPrint = Int32.Parse(Console.ReadLine());
+
+      foreach (var empl in _employees)
+      {
+        if (empl.StoreNumber == storeToPrint)
+        {
+
+          Console.WriteLine("     ");
+
+          var totalPay = empl.HoursWorked * empl.HoursWorked;
+
+          Console.WriteLine($"Current Pay Report for {empl.EmployeeName}");
+          Console.WriteLine($"-----------------------------");
+          Console.WriteLine($"\t Total Hours Worked: {empl.HoursWorked}");
+          Console.WriteLine($"\t Pay Rate: ${empl.PayRate}");
+          Console.WriteLine($"\t Total Gross Pay: ${totalPay}");
+
+          Console.WriteLine("     ");
+        }
+      }
+    }
 
         public static void RemoveEmployee()
         {
@@ -103,26 +170,61 @@ namespace TeamVoldemort.Employees
             //    }
             //}
         }
+        public static void updateEmployeeInfo()
+        {
+            Console.WriteLine("Update employee information? Y/N");
+            var response = Console.ReadLine().ToLower();
+            var updating = true;
 
-        //public void DeleteEmployee()
-        //{
-        //    var employeeToRemove = _employees.First(person => EmployeeRepository.EmployeeID == EmployeeRepository.EmployeeID);
+            if (string.Equals(response, "y"))
+            {
+                Console.WriteLine("Enter employee ID:");
+                var employeeID = Int32.Parse(Console.ReadLine());
+                foreach (var employee in _employees)
+                {
+                    if (employee.EmployeeID == employeeID)
+                    {
+                        while (updating)
+                        {
 
-        //    _people.Remove(personToRemove);
-        //}
+                            Console.WriteLine("Select item to update: \n1. Name\n2. Sales\n3. Store\n4. Title");
+                            var userResponse = Int32.Parse(Console.ReadLine());
+                            switch (userResponse)
+                            {
+                                case 1:
+                                    Console.WriteLine("Enter Employee Name:");
+                                    employee.EmployeeName = Console.ReadLine();
+                                    break;
+                                case 2:
+                                    Console.WriteLine("Enter Employee Sales");
+                                    employee.EmployeeSales = Int32.Parse(Console.ReadLine());
+                                    break;
+                                case 3:
+                                    Console.WriteLine("Enter Employee's Store Number");
+                                    employee.StoreNumber = Int32.Parse(Console.ReadLine());
+                                    break;
+                                case 4:
+                                    Console.WriteLine("Enter Employee Title");
+                                    employee.EmployeeTitle = Console.ReadLine();
+                                    break;
+                                default:
+                                    Console.WriteLine("Select an available option");
+                                    break;
+                            }
+                            generateEmployee(employee);
 
-        //public static void updateEmployeeInfo()
-        //{
-        //    Console.WriteLine("Update employee information? Y/N");
-        //    var response = Console.ReadLine().ToLower();
-        //    var yes = 'y';
-        //    var no = 'n';
-
-        //    if (String.Equals(response, yes))
-        //    {
-
-        //    }
-        //}
+                            Console.WriteLine("Update another item? Y/N");
+                            var answer = Console.ReadLine().ToLower();
+                            if (String.Equals(answer, "y"))
+                            {
+                                updating = true;
+                            }
+                            else updating = false;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
