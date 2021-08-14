@@ -13,8 +13,8 @@ namespace TeamVoldemort.Districts
     // it's just another piece of code to replace and refactor nbd
     static List<District> _districts = new List<District> {
 
-             new District("Bob", "South")
-
+             new District("Bob", "South"),
+             new District("Terri", "North")
             };
 
         public List<District> GetAll()

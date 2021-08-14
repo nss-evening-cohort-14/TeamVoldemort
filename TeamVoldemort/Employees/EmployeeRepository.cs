@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TeamVoldemort.Employees
 {
     class EmployeeRepository
     {
-    static List<Employee> _employees = new List<Employee>
+        static List<Employee> _employees = new List<Employee>
     {
     new Employee("Jim", 1, "AssistantManager", 4312, 1),
     new Employee("Bob", 2, "Store Manager", 5612, 1),
@@ -21,27 +22,27 @@ namespace TeamVoldemort.Employees
     new Employee("Nick", 12, "Associate", 3456, 4),
 
     };
-    public static void GenerateEmployeeReport(int storeNumber)
-    {
-      {
-        var counter = 1;
-        foreach (var employee in _employees)
+        public static void GenerateEmployeeReport(int storeNumber)
         {
-          if (employee.StoreNumber == storeNumber)
-          {
-            var position = employee.EmployeeTitle;
-            var name = employee.EmployeeName;
-            var sales = employee.EmployeeSales;
+            {
+                var counter = 1;
+                foreach (var employee in _employees)
+                {
+                    if (employee.StoreNumber == storeNumber)
+                    {
+                        var position = employee.EmployeeTitle;
+                        var name = employee.EmployeeName;
+                        var sales = employee.EmployeeSales;
 
-            Console.WriteLine($"\t{counter}. {position}");
-            Console.WriteLine($"\t{name}");
-            Console.WriteLine($"\tRetail Sales: ${sales}");
-            Console.WriteLine("                   ");
-            counter++;
-          }
+                        Console.WriteLine($"\t{counter}. {position}");
+                        Console.WriteLine($"\t{name}");
+                        Console.WriteLine($"\tRetail Sales: ${sales}");
+                        Console.WriteLine("                   ");
+                        counter++;
+                    }
+                }
+            }
         }
-      }
-    }
 
         public static void generateEmployee(Employee userEmployee)
         {
@@ -149,12 +150,26 @@ namespace TeamVoldemort.Employees
       }
     }
 
-    //public static void updateEmployeeInfo()
-    //{
-    //    Console.WriteLine("Update employee information? Y/N");
-    //    var response = Console.ReadLine().ToLower();
-    //    var yes = 'y';
-    //    var no = 'n';
+        public static void RemoveEmployee()
+        {
+
+            Console.WriteLine("Enter Employee Id");
+            var employeeSelected = int.Parse(Console.ReadLine());
+
+            _employees.RemoveAll(employee => employee.EmployeeID == employeeSelected);
+
+
+            //foreach (var employee in _employees)
+            //{
+            //    if (employee.EmployeeID == employeeSelected)
+            //    {
+
+            //        _employees.Remove(employee);
+            //        Console.WriteLine($" Employee {employeeSelected} has been removed!");
+            //        return;
+            //    }
+            //}
+        }
         public static void updateEmployeeInfo()
         {
             Console.WriteLine("Update employee information? Y/N");
