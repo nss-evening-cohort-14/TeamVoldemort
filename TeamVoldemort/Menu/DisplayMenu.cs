@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using TeamVoldemort.Districts;
 using TeamVoldemort.Employees;
-using TeamVoldemort.Payroll;
 using TeamVoldemort.Stores;
 
 namespace TeamVoldemort.Menu
@@ -27,8 +26,7 @@ namespace TeamVoldemort.Menu
         Console.WriteLine("3. Add New Employee");
         Console.WriteLine("4. Add a Store");
         Console.WriteLine("5. Add a District");
-        Console.WriteLine("6. Payroll");
-        Console.WriteLine("7. Exit");
+        Console.WriteLine("6. Exit");
         var result = Console.ReadLine();
         res = Int32.TryParse(result, out outNumb);
       }
@@ -58,7 +56,6 @@ namespace TeamVoldemort.Menu
         case 3:
           Console.WriteLine("You selected Add New Employee");
           EmployeeRepository.AddNewEmployee();
-                    EmployeeRepository.updateEmployeeInfo();
           break;
         case 4:
           StoreRepository.AddStore();
@@ -68,8 +65,6 @@ namespace TeamVoldemort.Menu
           DistrictRepository.AddNewDistrict();
           break;
         case 6:
-          var payRollSelection = PayRollMenu.ShowPayRollMenu();
-          PayRollMenu.PayRollActions(payRollSelection);
           break;
         default:
           Console.WriteLine("Invalid Entry");
