@@ -26,8 +26,11 @@ namespace TeamVoldemort.Menu
         Console.WriteLine("3. Add New Employee");
         Console.WriteLine("4. Add a Store");
         Console.WriteLine("5. Add a District");
-        Console.WriteLine("6. Exit");
-        var result = Console.ReadLine();
+        Console.WriteLine("6. Payroll");
+        Console.WriteLine("7. Remove Employee");
+        Console.WriteLine("8. Exit");
+
+                var result = Console.ReadLine();
         res = Int32.TryParse(result, out outNumb);
       }
       return outNumb;
@@ -64,9 +67,13 @@ namespace TeamVoldemort.Menu
           Console.WriteLine("You selected Add New District");
           DistrictRepository.AddNewDistrict();
           break;
-        case 6:
+        case 7:
+          Console.WriteLine("You selected to Remove an Employee");
+          EmployeeRepository.RemoveEmployee();
           break;
-        default:
+        case 8:
+          break;
+         default:
           Console.WriteLine("Invalid Entry");
           break;
       }
