@@ -9,16 +9,18 @@ namespace TeamVoldemort.Employees
     class Employee
     {
         public string EmployeeName { get; set; }
+        public int EmployeeID { get; set; }
         public string EmployeeTitle { get; set; }
         public int EmployeeSales { get; set; }
         public int StoreNumber { get; set; }
 
-        public Employee(string employeeName, string employeeTitle, int employeeSales, int storeNumber)
+        public Employee(string employeeName, int employeeID, string employeeTitle, int employeeSales, int storeNumber)
         {
             EmployeeName = employeeName;
             EmployeeTitle = employeeTitle;
             EmployeeSales = employeeSales;
             StoreNumber = storeNumber;
+            EmployeeID = employeeID;
         }
 
     }
